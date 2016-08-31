@@ -3,33 +3,39 @@
 {% block title %}Login - {{ block.super }}{% endblock %}
 
 {% block content %}
-    <div class="grid_9 alpha">
-        <div class="auth grid_4 prefix_1 alpha" id="signin">
-            <h2 class="grid_4">Sign In</h2>
+<div class="col-lg-12 col-md-12">
+    <div class="col-lg-6 col-md-6 col-lg-offset-3 col-md-offset-3 text-center" id="signin">
+        <div class="row">
+            <h2>Sign In</h2>
             <form method="POST">
-                <ul>
-                    {{ login_form.as_ul }}
-                </ul>
+                <div class="form-group customizeForm col-lg-8 col-lg-offset-2">
+                    {{ login_form }}
+                </div>
                 <input type="hidden" name="kind" value="login" />
                 {% if next %}
-                    <input type="hidden" name="next" value="{{ next }}" />
+                <input type="hidden" name="next" value="{{ next }}" />
                 {% endif %}
-                <input type="submit" value="Sign In" />
-            </form>
-        </div>
-    
-        <div class="auth grid_4 omega" id="signup">
-            <h2 class="grid_4">Sign Up</h2>
-            <form method="POST">
-                <ul>
-                    {{ register_form.as_ul }}
-                </ul>
-                <input type="hidden" name="kind" value="register" />
-                {% if next %}
-                    <input type="hidden" name="next" value="{{ next }}" />
-                {% endif %}
-                <input type="submit" value="Sign Up" />
+                <input class="btn btn-default col-lg-2 col-lg-offset-5 signinBtn" type="submit" value="Sign In" />
+<!--                <div class="col-lg-12">
+                    <span>Don't have a account?</span><a href="javascript:show('signup')" role="button">Sign Up</a>
+                </div>-->
             </form>
         </div>
     </div>
+    <div class="col-lg-6 col-md-6 col-lg-offset-3 col-md-offset-3 text-center" id="signup">
+        <div class="row">
+            <h2>Sign Up</h2>
+            <form method="POST">
+                <div class="form-group customizeForm col-lg-8 col-lg-offset-2">
+                    {{ register_form }}
+                </div>
+                <input type="hidden" name="kind" value="register" />
+                {% if next %}
+                <input type="hidden" name="next" value="{{ next }}" />
+                {% endif %}
+                <input class="btn btn-default col-lg-2 col-lg-offset-5" type="submit" value="Sign Up" />
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

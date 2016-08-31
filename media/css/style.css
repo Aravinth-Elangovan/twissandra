@@ -1,0 +1,112 @@
+#sidebar {
+    background: #f0f0f0;
+    padding: 5px;
+    margin-top: 73px;
+}
+
+body{
+    height: 100vh;
+    background: #f0f0f0;
+}
+
+li{
+    list-style-type: none;
+}
+
+#header .navbar-brand {
+    font-size: 28px;
+    font-weight: 600;
+    padding-left: 30px;
+    color: #e66e5d;
+}
+
+#header .navbar{
+    margin-bottom: 0px;
+    background: #383838;
+    border-bottom: 2px solid #e66e5d;
+    border-radius: 0px;
+}
+
+#header .nav-tabs{
+    border-bottom: 0px;
+}
+
+#nav li a{
+    color: #fff;
+}
+
+#nav li a:hover{
+    color: #fff;
+    border: none;
+    background: #e66e5d;
+}
+
+#header .nav-tabs > li > a {
+    border: none;
+    border-radius: 0px;
+    margin: 0px;
+}
+
+#sidebar a{
+    color: #e66e5d;
+}
+
+#mainContent{
+    background: #fff;
+    border-right: 1px solid #d8d8d8;
+    min-height: 94vh;
+}
+
+#mainContent a{
+    color: #e66e5d;
+}
+
+.customizeForm label{
+    display: none;
+}
+
+.customizeForm input{
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#mainContent h2{
+    background: #f0f0f0;
+    margin-top: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#signin{
+    border: 3px solid #f8f8f8;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    clear: right;
+}
+
+#signup{
+    border: 3px solid #f8f8f8;
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+
+.signinBtn{
+    margin-bottom: 10px; 
+}
+
+.timeline li{
+    border-bottom: 1px solid #f8f8f8;
+    padding: 10px 0px 10px 10px;
+}
+
+.timeline li a{
+    font-weight: bold;
+}
+
+.timeline li div{
+    margin-top: 5px;
+}
+
+.timeline li a:hover{
+    cursor: pointer;
+}

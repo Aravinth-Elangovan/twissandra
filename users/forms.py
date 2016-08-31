@@ -3,8 +3,9 @@ from django import forms
 import cass
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=30)
-    password = forms.CharField(widget=forms.PasswordInput(render_value=False))
+    username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'max_length':'30', 'placeholder':'Username'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control', 'render_value':False, 'placeholder':'Password'}))
+    
 
     def clean(self):
         username = self.cleaned_data['username']
@@ -22,9 +23,9 @@ class LoginForm(forms.Form):
 
 
 class RegistrationForm(forms.Form):
-    username = forms.RegexField(regex=r'^\w+$', max_length=30)
-    password1 = forms.CharField(widget=forms.PasswordInput(render_value=False))
-    password2 = forms.CharField(widget=forms.PasswordInput(render_value=False))
+    username = forms.RegexField(regex=r'^\w+$', widget=forms.TextInput(attrs={'class':'form-control', 'max_length':'30', 'placeholder':'Username'}))
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control', 'render_value':False, 'placeholder':'Password'}))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control', 'render_value':False, 'placeholder':'Re-enter Password'}))
 
     def clean_username(self):
         username = self.cleaned_data['username']
@@ -49,3 +50,4 @@ class RegistrationForm(forms.Form):
         password = self.cleaned_data['password1']
         cass.save_user(username, password)
         return username
+
